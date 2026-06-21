@@ -13,7 +13,7 @@
 
 | 项目 | 链接 |
 |------|------|
-| 用户控制台 | https://app.windcloud.space/ |
+| 用户仪表盘 | https://app.windcloud.space/ |
 | 注册（含邀请码） | https://app.windcloud.space/#/register?invite_code=scBNQo2u |
 | 客户端下载 | https://github.com/windcloudapp/proxy-client |
 | 邀请码 | `scBNQo2u` |

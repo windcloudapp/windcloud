@@ -316,6 +316,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   display: flex;
   justify-content: center;
+  padding: 32px 48px;
 }
 
 .glass-card {
@@ -445,13 +446,11 @@ a { color: inherit; text-decoration: none; }
 
 .speed-fill {
   height: 100%;
-  width: 0;
+  width: 30%;
   border-radius: inherit;
   background: linear-gradient(90deg, var(--sky), var(--indigo));
-  animation: speedGrow 2s ease-out 0.8s forwards;
+  transition: width 1.2s ease;
 }
-
-@keyframes speedGrow { to { width: 87%; } }
 
 .floating-chip {
   position: absolute;
@@ -466,8 +465,8 @@ a { color: inherit; text-decoration: none; }
   animation: chipFloat 6s ease-in-out infinite;
 }
 
-.chip-1 { top: -12px; right: -20px; animation-delay: 0s; }
-.chip-2 { bottom: 40px; left: -28px; animation-delay: -3s; }
+.chip-1 { top: -8px; right: -72px; animation-delay: 0s; }
+.chip-2 { bottom: 16px; left: -80px; animation-delay: -3s; }
 
 @keyframes chipFloat {
   0%, 100% { transform: translateY(0); }

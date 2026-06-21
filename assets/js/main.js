@@ -90,4 +90,42 @@
   } else {
     reveals.forEach(function (el) { el.classList.add('visible'); });
   }
+
+  var speedValue = document.getElementById('speedValue');
+  var speedFill = document.getElementById('speedFill');
+  var pings = document.querySelectorAll('.node-ping');
+
+  pings.forEach(function (el) {
+    el.dataset.base = parseInt(el.textContent, 10);
+  });
+
+  function jitter(base, range) {
+    return Math.round(base + (Math.random() * 2 - 1) * range);
+  }
+
+  function updateBandwidth() {
+    var val = jitter(30, 4);
+    val = Math.max(24, Math.min(36, val));
+    if (speedValue) speedValue.textContent = val + '%';
+    if (speedFill) speedFill.style.width = val + '%';
+  }
+
+  function updatePings() {
+    pings.forEach(function (el) {
+      var base = parseInt(el.dataset.base, 10);
+      var range = Math.max(2, Math.round(base * 0.06));
+      var val = Math.max(1, jitter(base, range));
+      el.textContent = val + 'ms';
+    });
+  }
+
+  function tickLiveMetrics() {
+    updateBandwidth();
+    updatePings();
+    setTimeout(tickLiveMetrics, 2000 + Math.random() * 2000);
+  }
+
+  updateBandwidth();
+  updatePings();
+  setTimeout(tickLiveMetrics, 2000);
 })();
