@@ -7,14 +7,14 @@
 
 部署 GitHub Pages 后，站点地址为：
 
-**https://windcloudapp.github.io/windcloud/**
+**https://windcloudapp.dpdns.org/**
 
 ## 快速链接
 
 | 项目 | 链接 |
 |------|------|
-| 用户仪表盘 | https://app.windcloud.space/ |
-| 注册（含邀请码） | https://app.windcloud.space/#/register?invite_code=scBNQo2u |
+| 用户仪表盘 | https://windcloudapp.dpdns.org/ |
+| 注册（含邀请码） | https://windcloudapp.dpdns.org/#/register?invite_code=scBNQo2u |
 | 客户端下载 | https://github.com/windcloudapp/proxy-client |
 | 邀请码 | `scBNQo2u` |
 
