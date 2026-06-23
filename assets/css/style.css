@@ -227,7 +227,7 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   gap: 64px;
-  align-items: center;
+  align-items: start;
 }
 
 .badge {
@@ -331,6 +331,9 @@ a { color: inherit; text-decoration: none; }
   box-shadow:
     0 24px 80px rgba(0, 0, 0, 0.45),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .glass-card::before {
@@ -352,6 +355,7 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
+  flex-shrink: 0;
 }
 
 .card-title {
@@ -375,7 +379,33 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 0 8px #4ade80;
 }
 
-.node-list { display: flex; flex-direction: column; gap: 12px; }
+.node-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 6px;
+  margin-right: -2px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56, 189, 248, 0.35) transparent;
+}
+
+.node-list::-webkit-scrollbar { width: 4px; }
+
+.node-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.node-list::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.35);
+}
+
+.node-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.55);
+}
 
 .node-item {
   display: flex;
@@ -427,6 +457,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid var(--border);
+  flex-shrink: 0;
 }
 
 .speed-label {
@@ -934,6 +965,20 @@ section { padding: 96px 0; }
 }
 
 /* Responsive */
+@media (min-width: 961px) {
+  .hero-visual {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .glass-card {
+    flex: 1;
+    max-height: var(--hero-card-max, none);
+  }
+}
+
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
   .hero-visual { order: -1; }
@@ -942,6 +987,10 @@ section { padding: 96px 0; }
   .platforms { grid-template-columns: repeat(3, 1fr); }
   .referral-box { grid-template-columns: 1fr; padding: 32px; }
   .links-grid { grid-template-columns: 1fr; }
+
+  .node-list {
+    max-height: min(320px, 48vh);
+  }
 }
 
 @media (max-width: 640px) {

@@ -128,4 +128,31 @@
   updateBandwidth();
   updatePings();
   setTimeout(tickLiveMetrics, 2000);
+
+  var heroContent = document.querySelector('.hero-content');
+  var glassCard = document.querySelector('.glass-card');
+  var desktopMq = window.matchMedia('(min-width: 961px)');
+
+  function syncHeroCardHeight() {
+    if (!heroContent || !glassCard) return;
+    if (desktopMq.matches) {
+      var h = heroContent.offsetHeight;
+      glassCard.style.setProperty('--hero-card-max', h + 'px');
+      glassCard.style.maxHeight = h + 'px';
+    } else {
+      glassCard.style.removeProperty('--hero-card-max');
+      glassCard.style.maxHeight = '';
+    }
+  }
+
+  if (heroContent && glassCard) {
+    if (window.ResizeObserver) {
+      var heroRo = new ResizeObserver(syncHeroCardHeight);
+      heroRo.observe(heroContent);
+    }
+    desktopMq.addEventListener('change', syncHeroCardHeight);
+    window.addEventListener('resize', syncHeroCardHeight);
+    window.addEventListener('load', syncHeroCardHeight);
+    syncHeroCardHeight();
+  }
 })();
