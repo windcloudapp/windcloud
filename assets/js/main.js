@@ -138,9 +138,11 @@
     if (desktopMq.matches) {
       var h = heroContent.offsetHeight;
       glassCard.style.setProperty('--hero-card-max', h + 'px');
+      glassCard.style.height = h + 'px';
       glassCard.style.maxHeight = h + 'px';
     } else {
       glassCard.style.removeProperty('--hero-card-max');
+      glassCard.style.height = '';
       glassCard.style.maxHeight = '';
     }
   }
@@ -153,6 +155,9 @@
     desktopMq.addEventListener('change', syncHeroCardHeight);
     window.addEventListener('resize', syncHeroCardHeight);
     window.addEventListener('load', syncHeroCardHeight);
+    document.fonts && document.fonts.ready && document.fonts.ready.then(syncHeroCardHeight);
+    setTimeout(syncHeroCardHeight, 100);
+    setTimeout(syncHeroCardHeight, 800);
     syncHeroCardHeight();
   }
 })();
