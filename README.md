@@ -19,7 +19,7 @@
 
 | 项目 | 链接 |
 |------|------|
-| 注册（含邀请码） | https://windcloudapp.dpdns.org/#/register?invite_code=scBNQo2u |
+| 注册（含邀请码） | https://windcloudapp.dpdns.org/#/register?code=scBNQo2u |
 | 客户端下载 | https://github.com/windcloudapp/proxy-client |
 | 邀请码 | `scBNQo2u` |
 
