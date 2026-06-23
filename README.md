@@ -12,8 +12,8 @@
 | 域名 | 链接 | 备注 |
 |------|------|------|
 | windcloudapp.dpdns.org | https://windcloudapp.dpdns.org/ | **推荐** |
-| windcloud.space | https://windcloud.space/ | 备用 |
-| windcloud.ccwu.cc | https://windcloud.ccwu.cc/ | 备用 |
+| windcloud.ccwu.cc | https://windcloud.ccwu.cc/ | 第一备选 |
+| windcloud.space | https://windcloud.space/ | 第二备选 |
 
 ## 快速链接
 
