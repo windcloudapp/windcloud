@@ -5,9 +5,11 @@
 
 ## 在线访问
 
-部署 GitHub Pages 后，站点地址为：
+部署 GitHub Pages 后，**落地页**地址为：
 
-**https://windcloudapp.dpdns.org/**
+**https://windcloudapp.github.io/windcloud/**
+
+> 请勿将 GitHub Pages 自定义域名设为 `windcloudapp.dpdns.org`——该域名已指向用户仪表盘（主站），否则访问 github.io 会被重定向到登录页。
 
 ## 快速链接
 
